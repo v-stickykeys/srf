@@ -41,7 +41,7 @@ SRF is an interaatcive surfing application designed to bring the surfing communi
 
 
 ### Roadmap
-<p align="center">
+<p align="left">
 <br />
     <img src="userflow.PNG" width="800" alt=""/>
 <br />
