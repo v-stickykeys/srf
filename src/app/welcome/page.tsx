@@ -2,6 +2,7 @@
 import Image, { StaticImageData } from 'next/image';
 import React, { useState } from 'react';
 import surfImage from './surf.png';
+import Link from 'next/link';
 
 interface NFTSurfer {
     imageUrl: StaticImageData;
@@ -19,6 +20,7 @@ interface NFTSurfer {
   
     const confirmNFT = (): void => {
       console.log('NFT confirmed');
+
     };
   
     const createAccount = (): void => {
@@ -51,12 +53,14 @@ interface NFTSurfer {
               >
                 Regenerate
               </button>
+            <Link href="/video" passHref>
               <button 
                 onClick={confirmNFT}
                 className="px-6 py-2 bg-blue-500 text-white rounded-full"
               >
                 All Set!
               </button>
+              </Link>
             </div>
           </div>
         </div>
