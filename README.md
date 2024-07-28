@@ -19,7 +19,7 @@
 ---
 
 ### What is SRF?
-SRF is an interatcive surfing application designed to bring the surfing community together. It encourages users to submit videos of themselves surfing and empowers them to interact by voting in competitions. 
+SRF is an interactive surfing application designed to bring the surfing community together. It encourages users to submit videos of themselves surfing and empowers them to interact by voting in competitions. 
 
 ### Features
 - **Parachain:** Used UniqueNetwork ParaCahin
