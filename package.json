@@ -14,6 +14,7 @@
     "@privy-io/react-auth": "^1.76.4",
     "@unique-nft/solidity-interfaces": "^0.70.0",
     "axios": "^1.7.2",
+    "donedb": "^0.0.3",
     "next": "14.2.5",
     "react": "^18",
     "react-dom": "^18",

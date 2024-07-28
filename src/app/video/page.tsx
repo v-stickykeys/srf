@@ -5,6 +5,7 @@ import { HeartIcon, ChatBubbleLeftIcon, ShareIcon, ArrowUpIcon } from '@heroicon
 import LoginButton from '../components/LoginButton';
 import Link from 'next/link';
 import { listFiles } from '../utils/listFiles';
+import CountVote from '../components/CountVote';
 
 interface Video {
   id: string;
@@ -63,7 +64,7 @@ const VideoFeed: React.FC = () => {
 
       <main className="flex-grow">
         <div className="max-w-md mx-auto pt-4 pb-20 px-2">
-          {videos.map((video) => (
+          {videos.map((video, idx) => (
             <div key={video.id} className="bg-white rounded-2xl overflow-hidden shadow-lg mb-6">
               <video className="h-full w-full rounded-lg" controls>
       <source
@@ -91,10 +92,7 @@ const VideoFeed: React.FC = () => {
                       <ChatBubbleLeftIcon className="h-6 w-6 mr-1" />
                       <span>{video.comments}</span>
                     </button>
-                    <button className="flex items-center text-gray-700 hover:text-green-500">
-                      <ArrowUpIcon className="h-6 w-6 mr-1" />
-                      <span>{video.votes}</span>
-                    </button>
+                    <CountVote field={`srf-videos-${idx}`} />
                   </div>
                   <button className="text-gray-700 hover:text-indigo-500">
                     <ShareIcon className="h-6 w-6" />
