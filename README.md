@@ -24,7 +24,7 @@
 
 
 ### Demo
-- [Demo](https://youtu.be/rZFbwazISlo)(28 Jul 2024)
+- [Demo](https://youtu.be/rZFbwazISlo) (28 Jul 2024)
 
 ### Images
 
