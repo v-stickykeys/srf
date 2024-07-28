@@ -20,8 +20,11 @@
 
 
 ### Features
-- **Parachain:** 
-
+- **Parachain:** Used UniqueNetwork ParaCahin
+- **PolkadotJS API:** Is used to connect the front end to the Parachain
+- **Log In of NFT:** Mint NFT whenever someone logs in using UniqueNetworks' Parachain
+- **Tokenize video submissions:** Mint NFT whenever someone uploads a video and enters the contest
+- **Distribute rewards:** Distribute USDC on Polkadot to the uploader and athlete
 
 ### Demo
 
