@@ -28,7 +28,10 @@ SRF is an interaatcive surfing application designed to bring the surfing communi
 ### Images
 <p align="left">
 <br />
+    <img src="login.png" width="200" alt=""/>
     <img src="3.1. Login - light.png" width="200" alt=""/>
+    <img src="home.png" width="200" alt=""/>
+    <img src="0Notifications.png" width="200" alt=""/>
     <img src="1.1. Social home - dark.png" width="200" alt=""/>
     <img src="compete.png" width="200" alt=""/>
     <img src="compete2.png" width="200" alt=""/>
