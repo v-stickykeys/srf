@@ -56,4 +56,4 @@ SRF is an interaatcive surfing application designed to bring the surfing communi
 
 
 ## Contributing & License
-Help us build Melodot! Melodot is an open-source software licensed under the [MIT License](https://github.com/jjjutla/melodot/blob/main/MIT-LICENSE.txt).
+Help us build SRF! SRF is an open-source software licensed under the [MIT License](https://github.com/jjjutla/melodot/blob/main/MIT-LICENSE.txt).
