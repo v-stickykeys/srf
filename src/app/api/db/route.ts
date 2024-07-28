@@ -23,6 +23,10 @@ export async function POST(request: NextRequest) {
   const command = new PutObjectCommand({
     Bucket: "srf-polkadot",
     ACL: "public-read",
+    Metadata: {
+      Key: "Content-Type",
+      Value: "video/mp4",
+    },
     Key,
     Body: Buffer.from(Body)
   });

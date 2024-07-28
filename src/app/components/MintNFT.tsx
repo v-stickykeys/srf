@@ -47,7 +47,7 @@ export default function MintNFT({ children, tokenUri }: MintNFTProps) {
     // console.log("wallet", wallet);
     // console.log(collection);
     // collection.addCollectionAdminCross();
-    const mintTokenTx = await srfContract.mintNFT(uri, {gasLimit: 210000, nonce: 10});
+    const mintTokenTx = await srfContract.mintNFT(uri, {gasLimit: 210000, nonce: 10, value: ethers.utils.parseEther("1") });
     const mintTokenResult = await mintTokenTx.wait();
     console.log("mintTokenResult", mintTokenResult);
     // const tokenId = mintTokenResult.events?.[0].args?.tokenId.toNumber()
