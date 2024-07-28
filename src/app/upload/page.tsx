@@ -2,6 +2,7 @@
 
 import React, { useState, ChangeEvent, FormEvent } from 'react';
 import axios from 'axios';
+import MintNFT from '../components/MintNFT';
 
 const VideoUpload: React.FC = () => {
   const [file, setFile] = useState<File | null>(null);
@@ -95,7 +96,12 @@ const VideoUpload: React.FC = () => {
         </form>
         {error && <p className="mt-4 text-center text-red-500">{error}</p>}
         {uploadSuccess && (
-          <p className="mt-4 text-center text-green-500">File uploaded successfully!</p>
+          <div>
+            <p className="mt-4 text-center text-green-500">File uploaded successfully!</p>
+            <MintNFT tokenUri="https://surflytics.com/videos/1">
+            <p className="mt-4 text-center text-green-500">Enter contest</p>
+            </MintNFT>
+          </div>
         )}
       </div>
     </div>

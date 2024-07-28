@@ -19,6 +19,7 @@ export default function LoginButton() {
 
   if (ready && authenticated) {
     // Replace this code with however you'd like to handle an authenticated user
-    return <p>User {user?.id} is logged in.</p>;
+    console.log("User is logged in", user);
+    return <p className="text-gray-600 font-semibold">Logged in</p>;
   }
 }

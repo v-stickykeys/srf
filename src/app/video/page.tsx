@@ -1,6 +1,9 @@
 "use client";
+
 import React, { useState, useEffect } from 'react';
 import { HeartIcon, ChatBubbleLeftIcon, ShareIcon, ArrowUpIcon } from '@heroicons/react/24/outline';
+import LoginButton from '../components/LoginButton';
+import Link from 'next/link';
 
 interface Video {
   id: string;
@@ -51,8 +54,9 @@ const VideoFeed: React.FC = () => {
           <div className="text-2xl font-bold text-indigo-600">SRF</div>
           <nav>
             <ul className="flex space-x-4">
-              <li><a href="#" className="text-gray-600 hover:text-indigo-600">Following</a></li>
-              <li><a href="#" className="text-indigo-600 font-semibold">For You</a></li>
+              <li>
+              <LoginButton />
+              </li>
             </ul>
           </nav>
           <button className="text-gray-600 hover:text-indigo-600">
@@ -112,11 +116,13 @@ const VideoFeed: React.FC = () => {
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
             </svg>
           </button>
-          <button className="bg-indigo-600 text-white rounded-full p-3 hover:bg-indigo-700">
+          <Link href="/upload">
+          <button className="bg-indigo-600 text-white rounded-full p-3 hover:bg-indigo-700" aria-label="Upload video">
             <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4v16m8-8H4" />
             </svg>
           </button>
+          </Link>
           <button className="text-gray-600 hover:text-indigo-600">
             <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9" />

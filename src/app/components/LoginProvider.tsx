@@ -1,8 +1,9 @@
 'use client';
 
 import {PrivyProvider} from '@privy-io/react-auth';
+import {opalChain} from '../utils/privy';
 
-export default function Providers({children}: {children: React.ReactNode}) {
+export default function LoginProvider({children}: {children: React.ReactNode}) {
   return (
     <PrivyProvider
       appId="clz4pofbe085z6wf2p673goje"
@@ -17,6 +18,8 @@ export default function Providers({children}: {children: React.ReactNode}) {
         embeddedWallets: {
           createOnLogin: 'users-without-wallets',
         },
+        defaultChain: opalChain,
+        supportedChains: [opalChain],
       }}
     >
       {children}
