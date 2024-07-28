@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@aws-sdk/client-s3": "^3.620.0",
     "@privy-io/js-sdk-core": "^0.24.4",
     "@privy-io/react-auth": "^1.76.4",
     "@unique-nft/solidity-interfaces": "^0.70.0",

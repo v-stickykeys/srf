@@ -3,6 +3,7 @@
 import React, { useState, ChangeEvent, FormEvent } from 'react';
 import axios from 'axios';
 import MintNFT from '../components/MintNFT';
+import { uploadFile } from '../utils/uploadFile';
 
 const VideoUpload: React.FC = () => {
   const [file, setFile] = useState<File | null>(null);
@@ -27,13 +28,21 @@ const VideoUpload: React.FC = () => {
     setError(null);
 
     const formData = new FormData();
-    formData.append('video', file);
+    formData.append('file', file);
 
     try {
-      await axios.post('/api/upload', formData, {
-        headers: { 'Content-Type': 'multipart/form-data' },
+      const data = await uploadFile({
+        formData,
+        onUploadProgress(progress: number) {
+          console.log(progress);
+        },
       });
       setUploadSuccess(true);
+
+      // await axios.post('/api/upload', formData, {
+      //   headers: { 'Content-Type': 'multipart/form-data' },
+      // });
+      // setUploadSuccess(true);
     } catch (error) {
       setError('An error occurred while uploading the file');
       console.error('Upload error:', error);
@@ -46,6 +55,7 @@ const VideoUpload: React.FC = () => {
     <div className="min-h-screen bg-gradient-to-br from-purple-100 to-indigo-200 flex items-center justify-center p-4">
       <div className="bg-white rounded-lg shadow-xl p-8 max-w-md w-full">
         <h1 className="text-3xl font-bold mb-6 text-center text-indigo-600">Upload Your Video</h1>
+        {!uploadSuccess && (
         <form onSubmit={handleSubmit} className="space-y-6">
           <div className="relative border-2 border-dashed border-gray-300 rounded-lg p-6 transition-all duration-300 ease-in-out hover:border-indigo-500">
             <input
@@ -94,12 +104,13 @@ const VideoUpload: React.FC = () => {
             )}
           </button>
         </form>
+        )}
         {error && <p className="mt-4 text-center text-red-500">{error}</p>}
         {uploadSuccess && (
           <div>
             <p className="mt-4 text-center text-green-500">File uploaded successfully!</p>
             <MintNFT tokenUri="https://surflytics.com/videos/1">
-            <p className="mt-4 text-center text-green-500">Enter contest</p>
+          Enter contest
             </MintNFT>
           </div>
         )}

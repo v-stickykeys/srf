@@ -4,11 +4,12 @@ import {
   CollectionHelpersFactory,
   UniqueNFTFactory,
 } from '@unique-nft/solidity-interfaces'
-import { NFT_COLLECTION_ADDRESS, OPAL_NETWORK_ID } from '../constants';
+import { NFT_COLLECTION_ADDRESS, OPAL_NETWORK_ID, SRF_CONTRACT_ADDRESS } from '../constants';
 import { Children, useEffect, useState } from 'react';
 import { UniqueNFT } from '@unique-nft/solidity-interfaces';
 import { useWallets } from '@privy-io/react-auth';
 import { calculateTotalGasEstimate } from '@privy-io/js-sdk-core';
+import abi from '../../artifacts/abi.json';
 
 interface MintNFTProps {
     children: React.ReactNode;
@@ -16,7 +17,7 @@ interface MintNFTProps {
 }
 
 export default function MintNFT({ children, tokenUri }: MintNFTProps) {
-    const [collection, setCollection] = useState<UniqueNFT | null>(null);
+    const [srfContract, setSrfContract] = useState<any>(null);
     const {ready, wallets} = useWallets();
 
     useEffect(() => {
@@ -31,13 +32,13 @@ export default function MintNFT({ children, tokenUri }: MintNFTProps) {
         await wallet.switchChain(OPAL_NETWORK_ID);
         const provider = await wallet.getEthersProvider();
         const signer = provider.getSigner();
-        const contract = await UniqueNFTFactory(NFT_COLLECTION_ADDRESS, signer, ethers);
+        const contract = new ethers.Contract(SRF_CONTRACT_ADDRESS, abi, signer);
         console.log("contract", contract);
-        setCollection(contract);
+        setSrfContract(contract);
     }
 
   async function mint(uri: string) {
-    if (!collection || !ready) {
+    if (!srfContract || !ready) {
         return;
     }
     const wallet = wallets[0];
@@ -46,14 +47,16 @@ export default function MintNFT({ children, tokenUri }: MintNFTProps) {
     // console.log("wallet", wallet);
     // console.log(collection);
     // collection.addCollectionAdminCross();
-    const mintTokenTx = await collection.mintWithTokenURI(wallet.address, uri, {gasLimit: 210000, nonce: 4});
+    const mintTokenTx = await srfContract.mintNFT(uri, {gasLimit: 210000, nonce: 10});
     const mintTokenResult = await mintTokenTx.wait();
-    const tokenId = mintTokenResult.events?.[0].args?.tokenId.toNumber()
-    console.log("minted tokenId", tokenId);
+    console.log("mintTokenResult", mintTokenResult);
+    // const tokenId = mintTokenResult.events?.[0].args?.tokenId.toNumber()
+    // console.log("minted tokenId", tokenId);
   }
 
     return (
-        <button onClick={() => mint(tokenUri)}>
+<button className={`w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500`}
+        onClick={() => mint(tokenUri)}>
             {children}
         </button>
     );
