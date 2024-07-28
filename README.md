@@ -24,7 +24,7 @@ SRF is an interactive surfing application designed to bring the surfing communit
 ### Features
 - **Parachain:** Used UniqueNetwork ParaCahin
 - **PolkadotJS API:** Is used to connect the front end to the Parachain
-- **Log In of NFT:** Mint NFT whenever someone logs in using UniqueNetworks' Parachain
+- **Log In using NFT:** Mint NFT whenever someone logs in using UniqueNetworks' Parachain
 - **Tokenize video submissions:** Mint NFT whenever someone uploads a video and enters the contest
 - **Distribute rewards:** Distribute USDC on Polkadot to the uploader and athlete
 
