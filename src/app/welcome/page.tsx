@@ -3,6 +3,7 @@ import Image, { StaticImageData } from 'next/image';
 import React, { useState } from 'react';
 import surfImage from './surf.png';
 import Link from 'next/link';
+import LoginButton from '../components/LoginButton';
 
 interface NFTSurfer {
     imageUrl: StaticImageData;
@@ -65,7 +66,7 @@ interface NFTSurfer {
           </div>
         </div>
         <p className="mt-4 text-gray-600">
-          Sign In Using Another Wallet <a href="#" className="text-blue-500">Sign In</a>
+          <LoginButton />
         </p>
       </div>
     );
