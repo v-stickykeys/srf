@@ -26,6 +26,17 @@ SRF is an interaatcive surfing application designed to bring the surfing communi
 - [Demo](https://youtu.be/rZFbwazISlo) (28 Jul 2024)
 
 ### Images
+<p align="left">
+<br />
+    <img src="3.1. Login - light.png" width="200" alt=""/>
+    <img src="1.1. Social home - dark.png" width="200" alt=""/>
+    <img src="compete.png" width="200" alt=""/>
+    <img src="compete2.png" width="200" alt=""/>
+    <img src="compete3.png" width="200" alt=""/>
+    <img src="vote.png" width="200" alt=""/>
+    <img src="winner.png" width="200" alt=""/>
+<br />
+</p>
 
 
 
