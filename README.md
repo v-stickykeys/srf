@@ -29,6 +29,7 @@ SRF is an interactive surfing application designed to bring the surfing communit
 - **Log In using NFT:** Mint NFT whenever someone logs in using UniqueNetworks' Parachain
 - **Tokenize video submissions:** Mint NFT whenever someone uploads a video and enters the contest
 - **Distribute rewards:** Distribute USDC on Polkadot to the uploader and athlete
+- **What's Next?**
 
 ### Demo
 - [App demo](https://youtu.be/rZFbwazISlo)
